@@ -1,14 +1,13 @@
 import math
-import sys
 
 # Открываем файлы с данными
-with open(sys.argv[1], 'r') as file1, open(sys.argv[2], 'r') as file2:
+with open('circle.txt', 'r') as file_1, open('dot.txt', 'r') as file_2:
     # Читаем данные о центре и радиусе окружности
-    cx, cy = map(float, file1.readline().split())
-    radius = float(file1.readline())
+    cx, cy = map(float, file_1.readline().split())
+    radius = float(file_1.readline())
 
     # Обрабатываем координаты точек
-    for line in file2:
+    for line in file_2:
         x, y = map(float, line.split())
         distance = math.sqrt((x - cx)**2 + (y - cy)**2)
         if distance < radius:
