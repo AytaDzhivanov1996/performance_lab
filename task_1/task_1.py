@@ -3,9 +3,11 @@ def find_path(n, m):
     path = []
     current_index = 0
 
-    while len(path) < n:
+    while True:
         path.append(array[current_index])
         current_index = (current_index + m - 1) % len(array)
+        if current_index == 0:
+            break
 
     return ''.join(map(str, path))
 
