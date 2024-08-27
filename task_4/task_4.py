@@ -1,3 +1,5 @@
+import sys
+
 def min_moves_to_equal_elements(nums):
     # Сортируем массив
     nums.sort()
@@ -11,8 +13,12 @@ def min_moves_to_equal_elements(nums):
     return moves
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python3 task_4.py <path_to_numbers_file>")
+        sys.exit(1)
+    
     # Читаем файл и преобразуем его в список чисел
-    with open('numbers.txt', 'r') as file:
+    with open(sys.argv[1], 'r') as file:
         nums = list(map(int, file.readlines()))
     
     # Вычисляем минимальное количество шагов

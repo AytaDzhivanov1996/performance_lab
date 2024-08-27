@@ -1,7 +1,13 @@
 import math
+import sys
 
+
+if len(sys.argv) != 3:
+        print("Usage: python3 task_2.py <path_to_file_1> <path_to_file_2>")
+        sys.exit(1)
+        
 # Открываем файлы с данными
-with open('circle.txt', 'r') as file_1, open('dot.txt', 'r') as file_2:
+with open(sys.argv[1], 'r') as file_1, open(sys.argv[2], 'r') as file_2:
     # Читаем данные о центре и радиусе окружности
     cx, cy = map(float, file_1.readline().split())
     radius = float(file_1.readline())
